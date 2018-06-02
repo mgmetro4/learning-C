@@ -33,3 +33,19 @@ Popular functions to send strings to standard output.
   5. `\'` - escaped single quotation. Does not have to be escaped within a string.
   
   ----
+
+### variables.c
+Keywords and byte sizes (sizes can depend on compiler):
+```
+    int (4)       char (1)       long (4)      signed
+    float (4)     double (8)    short (2)    unsigned
+```
+  - char's hold single characters within single quotations. Chars are actually type int.
+  - doubles are more precise than floats because they use more bits.
+  - signed means it can possess a negative value.
+  - unsigned means 0 or positive only. Used to increase range in the positive direction.
+  - longs lengthen size in bits.
+  - shorts shorten size in bits.
+  - You cannot have a short or long long double within GCC. Long Double = 12  bytes.
+  - long long = 8 bytes. Can't have a short short with GCC.
+  - Can't have long or short floats.
