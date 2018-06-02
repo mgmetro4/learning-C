@@ -10,8 +10,7 @@ The smallest, most basic C file. Just an empty main function.
 
 ----
 
-### outputs.c
-Popular functions to send strings to standard output.
+### outputs.c - Popular functions to send strings to standard output
 1. `puts()` - Simply sends strings to output with an automatic newline at the end. Located within <stdio.h>
 2. `printf()` - Does not automatically include a newline at the end of the string. Can make use of placeholders. Located within <stdio.h>.
 3. `putchar()`
@@ -34,8 +33,8 @@ Popular functions to send strings to standard output.
   
   ----
 
-### variables.c
-Keywords and byte sizes (sizes can depend on compiler):
+### variables.c - Keywords and byte sizes
+Sizes can depend on compiler):
 ```
     int (4)       char (1)       long (4)      signed
     float (4)     double (8)    short (2)    unsigned
@@ -49,3 +48,25 @@ Keywords and byte sizes (sizes can depend on compiler):
   - You cannot have a short or long long double within GCC. Long Double = 12  bytes.
   - long long = 8 bytes. Can't have a short short with GCC.
   - Can't have long or short floats.
+
+----
+
+### io.c - Common Input/Output (I/O) Functions
+
+1. `getchar()` 
+   - Fetch a character from the standard input stream. Chars are **type int**.
+   - **Stream Oriented**. That means executing several `getchar()` will appear as one to the user if the number of chars given by the user = asked for - 1 because the newline character is saved in the stream. Any extras are kept in the stream and saved for later in order.
+   - Exits input catching with a **newline**.
+
+2. `putchar(<char> or <int>)` - Send an ASCII character to standard output.
+
+3. `scanf()`
+   - Cast input from type string to whatever placeholder is used
+   - prints input by itself immedietly.
+   - will only read until the **first whitespace**. Enter is used to end input fetching, however.
+   - **Stream Oriented**. Will take from stream first, before asking.
+
+4. `fgets()`
+   - is better because it does not stop at first whitespace
+   - **Stream Oriented**. Will read newline character from scanf if scanf is used before hand. Don't forget to clear the buffer!
+   - not good for numbers
