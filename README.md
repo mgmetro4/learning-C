@@ -5,14 +5,18 @@
 2. C compiler converts source code to an object file; .o
 3. Linker (modern day compilers do this) takes object file and 'links' it to C library files and creates an application; .exe
 
+
+## Files and Notes
+
+
 ### dummy.c
 The smallest, most basic C file. Just an empty main function.
 
-----
+-------
 
 ### outputs.c - Popular functions to send strings to standard output
-1. `puts()` - Simply sends strings to output with an automatic newline at the end. Located within <stdio.h>
-2. `printf()` - Does not automatically include a newline at the end of the string. Can make use of placeholders. Located within <stdio.h>.
+1. `puts()` - Simply sends strings to output with an automatic newline at the end. Located within `<stdio.h>`
+2. `printf()` - Does not automatically include a newline at the end of the string. Can make use of placeholders. Located within `<stdio.h>`.
 3. `putchar()`
 
 **NOTE:** Strings are held in double quotations ("") and single characters are held in single quotations (''). "C" is a string.
@@ -31,7 +35,7 @@ The smallest, most basic C file. Just an empty main function.
   4. `\"` - escaped double quotation
   5. `\'` - escaped single quotation. Does not have to be escaped within a string.
   
-  ----
+-------
 
 ### variables.c - Keywords and byte sizes
 Sizes can depend on compiler):
@@ -60,13 +64,30 @@ Sizes can depend on compiler):
 
 2. `putchar(<char> or <int>)` - Send an ASCII character to standard output.
 
-3. `scanf()`
+3. `scanf(<placeholder>, <&variable> or <array>)`
    - Cast input from type string to whatever placeholder is used
    - prints input by itself immedietly.
    - will only read until the **first whitespace**. Enter is used to end input fetching, however.
    - **Stream Oriented**. Will take from stream first, before asking.
 
-4. `fgets()`
+4. `fgets(<array>, <number of chars including final NULL>, <input>=stdin for standard input)`
    - is better because it does not stop at first whitespace
    - **Stream Oriented**. Will read newline character from scanf if scanf is used before hand. Don't forget to clear the buffer!
    - not good for numbers
+
+------
+
+### Math Notes
+- Increment Operator = `++`
+- Decrement Operator = `--`
+- `math.h` contains `sqrt(`) - uses floats
+- there is no exponent operator! Instead, use `pow(base, power)`
+
+------
+
+### Random Notes
+- `stdlib.h` is the Standard Library
+- contains `rand()` which produces pseudo random integers. Have to seed the function to get different random values
+  - a common trick is to use the computer's inner time value:
+    `srand( (unsigned) time(NULL) )`
+
