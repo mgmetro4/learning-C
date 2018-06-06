@@ -85,3 +85,89 @@ Sizes using GNU Compiler Collection (GCC) - sizes depend on compiler:
 - contains `rand()` which produces pseudo random integers. Have to seed the function to get different random values
   - a common trick is to use the computer's inner time value:
     `srand( (unsigned) time(NULL) )`
+
+
+### Logic Flow Control
+#### Comparison Operators
+    - == is equal to
+    - <
+    - >
+    - <= less than or equal to
+    - >= greater than or equal to
+    - != does not equal
+
+#### ifStatements.c - Logic Flow Control with If Statements
+If Statements
+```
+if (condition) {
+   code block
+ }
+ else if (condition) {
+   code block
+ }
+ else {
+   code block
+ }
+ ```
+
+- can put everything on one line
+  - Brackets not needed, but are good to use.
+  - Can also use: <br>
+   ```
+   printf(condition ? <True Output> : <False Output>);
+   ```
+- For multiple lines, USE BRACKETS!
+- Accidentally putting a `;` after the condition will cause the code block in the if statement to be ran regardless of whether the condition is true or not
+
+Case Statements (Swtich Case Structure)
+```
+switch(variable or object to compare too)
+{
+  case 'condition 1':
+    code block
+    break; /* to stop from reading the next case statement */
+  case 'condition 2':
+    code block
+    break;
+  /* keep going... */
+  default: /* runs if nothing above did */
+    code block
+}
+```
+
+----
+
+#### loops.c - Logic Flow Control with Loops
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
