@@ -170,6 +170,44 @@ Example:
   code block
   };`
 
+----
+
+### functions.c - Functions
+- Functions need:
+    - a return type
+      - void: there is no return value
+      - int: return value is an integer
+      - char, short, long, float, double, signed, unsigned
+      - self-defined via a specially created function
+    - a unique name
+    - arguments (one or more values passed to the function)
+
+- The **main** function is needed for every C program. It always runs first.
+- Aside from the **main** function, functions must be prototyped (or introduced) before use:
+  ```
+  #include <stdio.h>
+
+  void myFunction(void); /* Prototype Statement */
+
+  int main() 
+  {
+    myFunction();
+
+    return(0);
+  }
+
+  void myFunction(void){
+    function code block
+    return;
+  }
+  ``` 
+  - You don't have to use a prototype if you put the function before the main function, but it's generally cleaner to put prototypes at the top.
+  - Functions possess their own scope
+  - to leave a function, **return**. Return can be omitted on void functions.
+
+
+
+
 
 
 
