@@ -56,7 +56,7 @@ Sizes using GNU Compiler Collection (GCC) - sizes depend on compiler:
 
 **NOTE:** Strings are held in double quotations ("") and single characters are held in single quotations (''). "C" is a string.
 
-  #### Placeholders
+#### Placeholders
   1. `%d` - integers
       - to print justified, `%2d` = 2 digits
       - to print specific range, `variable % upper bound`
@@ -65,7 +65,7 @@ Sizes using GNU Compiler Collection (GCC) - sizes depend on compiler:
   4. `%c` - a single character
   5. `%%` - a percent sign
 
-  #### Escaped Characters
+#### Escaped Characters
   1. `\n` - newline
   2. `\t` - tab
   3. `\\` - escaped backslash
@@ -88,8 +88,9 @@ Sizes using GNU Compiler Collection (GCC) - sizes depend on compiler:
   - a common trick is to use the computer's inner time value:
     `srand( (unsigned) time(NULL) )`
 
+----
 
-### Logic Flow Control
+### ifStatements.c and loops.c - Logic Flow Control
 #### Comparison Operators
     - == is equal to
     - <
@@ -137,8 +138,6 @@ switch(variable or object to compare too)
 }
 ```
 
-----
-
 #### loops.c - Logic Flow Control with Loops
 - use `break;` statement to stop a loop early
 - loops can be **nested** (loops placed in other loops)
@@ -174,15 +173,18 @@ Example:
 
 ### functions.c - Functions
 - Functions need:
-    - a return type
+    - a **return type**
       - void: there is no return value
       - int: return value is an integer
       - char, short, long, float, double, signed, unsigned
       - self-defined via a specially created function
-    - a unique name
-    - arguments (one or more values passed to the function)
+    - **a unique name**
+    - **arguments** (one or more values passed to the function)
+
 
 - The **main** function is needed for every C program. It always runs first.
+- Functions possess their own scope
+- to leave a function, **return**. Return can be omitted on void functions.
 - Aside from the **main** function, functions must be prototyped (or introduced) before use:
   ```
   #include <stdio.h>
@@ -202,9 +204,8 @@ Example:
   }
   ``` 
   - You don't have to use a prototype if you put the function before the main function, but it's generally cleaner to put prototypes at the top.
-  - Functions possess their own scope
-  - to leave a function, **return**. Return can be omitted on void functions.
-
+ 
+ ----
 
 
 
