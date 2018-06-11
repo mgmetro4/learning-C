@@ -58,6 +58,8 @@ Sizes using GNU Compiler Collection (GCC) - sizes depend on compiler:
 
   #### Placeholders
   1. `%d` - integers
+      - to print justified, `%2d` = 2 digits
+      - to print specific range, `variable % upper bound`
   2. `%f` - floating-point values
   3. `%s` - strings
   4. `%c` - a single character
@@ -138,6 +140,37 @@ switch(variable or object to compare too)
 ----
 
 #### loops.c - Logic Flow Control with Loops
+- use `break;` statement to stop a loop early
+- loops can be **nested** (loops placed in other loops)
+
+**while loop**
+```
+while(condition) {
+  code block
+}
+```
+
+**do-while loop** - always runs at least once
+```
+do {
+  code block
+}
+while(condition);
+```
+
+**For loop**
+```
+int x;
+for(x=0; condition; what to do to x) {
+  code block
+}
+```
+Example:
+`for(x=0; x < 10; x++) {
+  code block
+  };`
+
+
 
 
 
