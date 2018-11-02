@@ -1,6 +1,4 @@
-# CSC 501 Operating Systems
-# Project 1
-# Process Scheduling
+# CSC 501 Operating Systems <br> Project 1 <br> Process Scheduling
 
 All the files I edited, aside from Makefile, are in the TMP folder.
 
