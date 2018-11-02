@@ -1,0 +1,59 @@
+Monica Metro
+CSC 501
+Project 1
+Schedulers
+
+1. What are the advantages and disadvantages of each of the two scheduling policies? Also, give the advantages and disadvantages of the round robin scheduling policy originally implemented in Xinu.
+
+
+Exponential:
+
+Advantages:
+- round robin allows for a fast response time
+- using exponential randomness reduces the possibility of starvation since the processes are scheuled randomly. One process will (hopefully) not be hogging all of the CPU time.
+
+Disadvantages:
+- round robin also can create a slow turnaround time (time to completion).
+- higher priority processes may not be completed as quickly as they should be, as they may not be scheduled right away.
+- the quality of the randomess heavily depends on the LAMBDA value.
+
+
+Linux Like Scheduler:
+
+Advantages
+- Runs important processes first
+- Allows the time to be controlled such that one processes isn't hogging CPU time. If a process could not run that much in the previous Epoch, they will be given more time (as an increased goodness level) to run in the next Epoch.
+- Processes that use I/O requests or are suspended will be able to start running agian depending on their priority level, instead of getting left behind.
+
+Disadvantages
+- Running highest priority constently will causing starvation on some lower-priority processes. 
+- Implementation is more difficutly.
+- There is more overhead as recalculaing goodness all the time gets expensive.
+
+
+Default Xinu:
+
+Advantages:
+- Xinu has a very simple and easy to understand scheduler. The process with the highest priority runs first.
+The timer interupt will cause the highest priority processes to run in Round Robin. This stops the first
+chosen highest priority process from starving out the other processes of the same priority.
+
+- since it's so simple, it is easy to change if needed.
+
+Disadvatnages:
+- Round Robin of highest level priorities causes, but causes starvation for lower-level processes if high level processes are always running.
+
+
+
+
+
+2. Describe the way each of the schedulers affects the NULL process.
+
+Exponential
+- NULL process is used as a "run if nothing else is there" catch. This allows the queue to stay up and running in case another process is created. It will not run unless it is the only process in the queue.
+
+Linux Like
+- Similar to exponential, the NULL process should only run if there are no other processes to run within that Epoch. This creates an easy way to check for the end of an epoch.
+
+Default Xinu
+- The NULL process will be shceduled only if there are no other processes to run because it will be the farthest process from the rdytail (end of the queue, start of where Xinu fetches a new process). This is like exponential: "run if nothing else is there".
